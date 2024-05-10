@@ -9,6 +9,7 @@ namespace Project2 {
 	using namespace System::Windows::Forms;
 	using namespace System::Data;
 	using namespace System::Drawing;
+	
 
 	/// <summary>
 	/// Сводка для MyForm
@@ -278,17 +279,23 @@ namespace Project2 {
 		}
 #pragma endregion
 	private: System::Void button1_Click(System::Object^ sender, System::EventArgs^ e) {
-		double xn, xk, xh, x, y, a, ymax, ymin, yt;
+	
+double xn, xk, xh, x, y, a, ymax, ymin, yt;
 		int  i;
 		//Проверка ввода данных в компоненты textBox 
 		if ((textBox1->Text != "") && (textBox2->Text != "") &&
 			(textBox3->Text != "") && (textBox4->Text != ""))
 		{
-			//Преобразование введенных данных в mun double 
+			/*//Преобразование введенных данных в mun double 
 			xn = Convert::ToDouble(textBox1->Text);
 			xk = Convert::ToDouble(textBox2->Text);
 			xh = Convert::ToDouble(textBox3->Text);
-			a = Convert::ToDouble(textBox4->Text);
+			a = Convert::ToDouble(textBox4->Text);*/
+
+			xn = -1.7;
+			xk = 2.6;
+			xh = 0.25;
+			a = 4;
 			//Очистка столбцов таблицы
 			dataGridView1->Columns->Clear();
 			//Создание двух столбцов в таблице
@@ -332,6 +339,7 @@ namespace Project2 {
 				"Ошибка ввода данных",
 				MessageBoxButtons::OK, MessageBoxIcon::Exclamation);
 		}
+
 	}
 private: System::Void button2_Click(System::Object^ sender, System::EventArgs^ e) {
 	Application::Exit();
@@ -368,7 +376,7 @@ private: System::Void textBox1_Leave(System::Object^ sender, System::EventArgs^ 
 	}
 }
 private: System::Void textBox2_Leave(System::Object^ sender, System::EventArgs^ e) {
-	int l, t, k; bool a = true; String^ str; str = textBox1->Text;
+	int l, t, k; bool a = true; String^ str; str = textBox2->Text;
 	l = str->Length;
 	//èíäåêñ ñèìâîëà, ñ êîòîðûì ðàáîòàåì 
 	t = 0;
@@ -395,11 +403,11 @@ private: System::Void textBox2_Leave(System::Object^ sender, System::EventArgs^ 
 	{
 		MessageBox::Show("ïàðàìåòð À íå ÿâëÿåòñÿ ÷èñëîì", "Îøèáêà ââîäà äàííûõ", MessageBoxButtons::OK, MessageBoxIcon::Exclamation);
 		//âîçâðàò ôîêóñà òåêñòîâîìó ïîëþ 
-		this->textBox1->Focus();
+		this->textBox2->Focus();
 	}
 }
 private: System::Void textBox3_Leave(System::Object^ sender, System::EventArgs^ e) {
-	int l, t, k; bool a = true; String^ str; str = textBox1->Text;
+	int l, t, k; bool a = true; String^ str; str = textBox3->Text;
 	l = str->Length;
 	//èíäåêñ ñèìâîëà, ñ êîòîðûì ðàáîòàåì 
 	t = 0;
@@ -426,7 +434,7 @@ private: System::Void textBox3_Leave(System::Object^ sender, System::EventArgs^ 
 	{
 		MessageBox::Show("ïàðàìåòð À íå ÿâëÿåòñÿ ÷èñëîì", "Îøèáêà ââîäà äàííûõ", MessageBoxButtons::OK, MessageBoxIcon::Exclamation);
 		//âîçâðàò ôîêóñà òåêñòîâîìó ïîëþ 
-		this->textBox1->Focus();
+		this->textBox3->Focus();
 	}
 }
 };
