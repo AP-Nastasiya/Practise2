@@ -182,6 +182,7 @@ namespace Project2 {
 			this->textBox1->Size = System::Drawing::Size(100, 20);
 			this->textBox1->TabIndex = 9;
 			this->textBox1->Text = L"-1.7";
+			this->textBox1->Enter += gcnew System::EventHandler(this, &MyForm::textBox1_Enter);
 			this->textBox1->Leave += gcnew System::EventHandler(this, &MyForm::textBox1_Leave);
 			// 
 			// textBox2
@@ -191,6 +192,7 @@ namespace Project2 {
 			this->textBox2->Size = System::Drawing::Size(100, 20);
 			this->textBox2->TabIndex = 10;
 			this->textBox2->Text = L"2.6";
+			this->textBox2->Enter += gcnew System::EventHandler(this, &MyForm::textBox2_Enter);
 			this->textBox2->Leave += gcnew System::EventHandler(this, &MyForm::textBox2_Leave);
 			// 
 			// textBox3
@@ -200,6 +202,7 @@ namespace Project2 {
 			this->textBox3->Size = System::Drawing::Size(100, 20);
 			this->textBox3->TabIndex = 11;
 			this->textBox3->Text = L"0.25";
+			this->textBox3->Enter += gcnew System::EventHandler(this, &MyForm::textBox3_Enter);
 			this->textBox3->Leave += gcnew System::EventHandler(this, &MyForm::textBox3_Leave);
 			// 
 			// textBox4
@@ -209,6 +212,7 @@ namespace Project2 {
 			this->textBox4->Size = System::Drawing::Size(100, 20);
 			this->textBox4->TabIndex = 12;
 			this->textBox4->Text = L"4";
+			this->textBox4->Enter += gcnew System::EventHandler(this, &MyForm::textBox4_Enter);
 			// 
 			// textBox5
 			// 
@@ -436,6 +440,22 @@ private: System::Void textBox3_Leave(System::Object^ sender, System::EventArgs^ 
 		//âîçâðàò ôîêóñà òåêñòîâîìó ïîëþ 
 		this->textBox3->Focus();
 	}
+}
+private: System::Void textBox1_Enter(System::Object^ sender, System::EventArgs^ e) {
+	textBox5->Text = "";
+	textBox6->Text = "";
+}
+private: System::Void textBox2_Enter(System::Object^ sender, System::EventArgs^ e) {
+	textBox5->Text = "";
+	textBox6->Text = "";
+}
+private: System::Void textBox3_Enter(System::Object^ sender, System::EventArgs^ e) {
+	textBox5->Text = "";
+	textBox6->Text = "";
+}
+private: System::Void textBox4_Enter(System::Object^ sender, System::EventArgs^ e) {
+	textBox5->Text = "";
+	textBox6->Text = "";
 }
 };
 }
